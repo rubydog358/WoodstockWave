@@ -1,9 +1,21 @@
-// based on https://www.openprocessing.org/sketch/152169
-// https://creativecommons.org/licenses/by-sa/3.0/
 
-size(400, 400);
-int x = 5;
-while(x <= 50) {
-  ellipse(200, 200, x, x);
-  x = x + 10;
+float beginning= PI;
+float end=TWO_PI;
+float movement = 0;
+void setup (){
+  size(600,300);
+  stroke(255);
+  strokeWeight(5);
+
+}
+
+void draw (){
+  background(5,10,100);
+  noFill();
+  end=map(sin(movement + (TWO_PI/10)), -1, 1, PI, TWO_PI);
+  arc(width/2, height/2, 100, 100, beginning, end);
+  movement=movement+PI/50;
+  
+  
+  
 }
